@@ -18,7 +18,10 @@ return new class extends Migration
             $table->foreignId('member_id');
             $table->foreignId('prouduct_id');
             $table->date('tgl_transaction');
+            $table->string('kode_pos');
             $table->string('keterangan');
+            $table->string('nama_penerima');
+            $table->string('nama_pengirim');
             $table->string('bukti_pemabayaran');
             $table->timestamps();
         });
