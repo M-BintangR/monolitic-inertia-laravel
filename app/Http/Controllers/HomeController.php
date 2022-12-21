@@ -9,6 +9,18 @@ class HomeController extends Controller
 {
     function index()
     {
-        return Inertia::render('Home');
+        $users = [
+            [
+                'nama' => 'Muhammd Bintang',
+                'kelas' => 'XII RPL 2'
+            ],
+            [
+                'nama' => 'Zhaka Hidayat',
+                'kelas' => 'XII RPL 2'
+            ],
+        ];
+        return Inertia::render('Home', [
+            'users' => $users,
+        ]);
     }
 }

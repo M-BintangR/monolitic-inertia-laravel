@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from '@inertiajs/inertia-react'
+import Navbar from '@/Components/Navbar'
 
-const Home = () => {
+const Home = ({ users }) => {
     return (
-        <div>Home</div>
+        <div>
+            <Navbar />
+        </div>
     )
 }
 
