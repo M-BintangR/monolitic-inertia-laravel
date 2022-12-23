@@ -1,7 +1,9 @@
 import React from 'react'
 import Navbar from '@/Components/Navbar'
 import Menus from '@/Components/Menus';
-import Card from '@/Components/Card';
+import { Card, CardBox } from '@/Components/Card';
+import Carousel from '@/Components/Carousel';
+import { SubJudul } from '@/Components/Judul';
 
 const Home = () => {
     const filteringMenus = [
@@ -44,14 +46,14 @@ const Home = () => {
 
     const products = [
         {
-            gambar: 'baju',
-            harga: '100.000',
+            gambar: 'celana',
+            harga: '20.000',
             diskon: {
                 persen: '10%',
-                harga: '150.000',
+                harga: '30.000',
             },
-            kota: 'Makassar',
-            Stock: '250',
+            kota: 'Surabaya',
+            stock: '250',
         },
         {
             gambar: 'baju',
@@ -61,7 +63,17 @@ const Home = () => {
                 harga: '150.000',
             },
             kota: 'Makassar',
-            Stock: '250',
+            stock: '250',
+        },
+        {
+            gambar: 'tas',
+            harga: '50.000',
+            diskon: {
+                persen: '10%',
+                harga: '60.000',
+            },
+            kota: 'Bandung',
+            stock: '250',
         },
         {
             gambar: 'baju',
@@ -71,7 +83,7 @@ const Home = () => {
                 harga: '150.000',
             },
             kota: 'Makassar',
-            Stock: '250',
+            stock: '250',
         },
         {
             gambar: 'baju',
@@ -81,28 +93,66 @@ const Home = () => {
                 harga: '150.000',
             },
             kota: 'Makassar',
-            Stock: '250',
-        },
-        {
-            gambar: 'baju',
-            harga: '100.000',
-            diskon: {
-                persen: '10%',
-                harga: '150.000',
-            },
-            kota: 'Makassar',
-            Stock: '250',
+            stock: '250',
         },
     ]
 
+    const carousel = [
+        { gambar: 'shirt' },
+        { gambar: 'clothes' },
+        { gambar: 'snack' },
+        { gambar: 'anime' }
+    ]
+
+    const terlaris = [
+        { gambar: 'shirt' },
+        { gambar: 'clothes' },
+        { gambar: 'snack' },
+        { gambar: 'anime' }
+    ]
+
+    const fashion = [
+        { gambar: 'shirt' },
+        { gambar: 'clothes' },
+        { gambar: 'snack' },
+        { gambar: 'anime' }
+    ]
+
     return (
-        <div className='bg-green-600'>
+        <div className='bg-green-600 h-[5000px]'>
             <Navbar />
-            <div className="bg-white rounded-tl-md rounded-tr-md">
-                <Menus filteringMenus={filteringMenus} />
+            <div className="bg-white rounded-tl-lg rounded-tr-lg">
                 <div>
-                    <h2 className='px-3 py-2 text-lg font-semibold'>Produk Hari Ini</h2>
-                    <Card products={products} />
+                    <Menus filteringMenus={filteringMenus} />
+                </div>
+                <div>
+                    <Carousel values={carousel} />
+                </div>
+                <div>
+                    <SubJudul title={'Produk Hari Ini'} />
+                    <div className="bg-green-600">
+                        <Card products={products} />
+                    </div>
+                </div>
+                <div>
+                    <SubJudul title={'Produk Terlaris'} />
+                    <CardBox values={terlaris} warna={'bg-blue-600'} />
+                </div>
+                <div >
+                    <SubJudul title={'Produk Termurah'} />
+                    <div>
+                        <Card products={products} />
+                    </div>
+                </div>
+                <div>
+                    <SubJudul title={'Produk Fashion'} />
+                    <CardBox values={fashion} warna={'bg-rose-600'} />
+                </div>
+                <div>
+                    <SubJudul title={'Trending'} />
+                    <div>
+                        <Card products={products} />
+                    </div>
                 </div>
             </div>
         </div>
