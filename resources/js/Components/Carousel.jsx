@@ -2,7 +2,7 @@ import React from 'react'
 
 const Carousel = () => {
     return (
-        <div className='mt-36 mx-36'>
+        <div className=''>
             <h2>jfdlskjfkasjdflasdjfkljasldkfjk</h2>
         </div>
     )

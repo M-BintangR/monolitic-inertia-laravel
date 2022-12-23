@@ -7,7 +7,6 @@ const Home = ({ users }) => {
     return (
         <div>
             <Navbar />
-            <Carousel />
         </div>
     )
 }
