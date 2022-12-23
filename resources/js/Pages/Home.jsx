@@ -4,11 +4,15 @@ import Menus from '@/Components/Menus';
 import { Card, CardBox } from '@/Components/Card';
 import Carousel from '@/Components/Carousel';
 import { SubJudul } from '@/Components/Judul';
+import Category from '@/Components/Category';
+import { filter } from 'lodash';
+import { AiOutlineCopyright } from 'react-icons/ai';
 
 const Home = () => {
     const filteringMenus = [
         {
             title: 'Termurah',
+            desc: ' Lorem ipsum dolor sit amet...',
             icon: {
                 title: 'FaMoneyBillWave',
                 color: 'text-green-500'
@@ -16,6 +20,7 @@ const Home = () => {
         },
         {
             title: 'Terlaris',
+            desc: ' Lorem ipsum dolor sit amet...',
             icon: {
                 title: 'AiOutlineShopping',
                 color: 'text-blue-500',
@@ -23,6 +28,7 @@ const Home = () => {
         },
         {
             title: 'Fasion',
+            desc: ' Lorem ipsum dolor sit amet...',
             icon: {
                 title: 'GiClothes',
                 color: 'text-red-500'
@@ -30,6 +36,7 @@ const Home = () => {
         },
         {
             title: 'Makanan',
+            desc: ' Lorem ipsum dolor sit amet...',
             icon: {
                 title: 'GiFruitBowl',
                 color: 'text-violet-500'
@@ -37,6 +44,7 @@ const Home = () => {
         },
         {
             title: 'Trending',
+            desc: ' Lorem ipsum dolor sit amet...',
             icon: {
                 title: 'AiOutlineCrown',
                 color: 'text-rose-500',
@@ -47,6 +55,7 @@ const Home = () => {
     const products = [
         {
             gambar: 'celana',
+            desc: ' Lorem ipsum dolor sit amet...',
             harga: '20.000',
             diskon: {
                 persen: '10%',
@@ -57,6 +66,7 @@ const Home = () => {
         },
         {
             gambar: 'baju',
+            desc: ' Lorem ipsum dolor sit amet...',
             harga: '100.000',
             diskon: {
                 persen: '10%',
@@ -67,6 +77,7 @@ const Home = () => {
         },
         {
             gambar: 'tas',
+            desc: ' Lorem ipsum dolor sit amet...',
             harga: '50.000',
             diskon: {
                 persen: '10%',
@@ -77,6 +88,7 @@ const Home = () => {
         },
         {
             gambar: 'baju',
+            desc: ' Lorem ipsum dolor sit amet...',
             harga: '100.000',
             diskon: {
                 persen: '10%',
@@ -87,6 +99,7 @@ const Home = () => {
         },
         {
             gambar: 'baju',
+            desc: ' Lorem ipsum dolor sit amet...',
             harga: '100.000',
             diskon: {
                 persen: '10%',
@@ -105,21 +118,42 @@ const Home = () => {
     ]
 
     const terlaris = [
-        { gambar: 'shirt' },
-        { gambar: 'clothes' },
-        { gambar: 'snack' },
-        { gambar: 'anime' }
+        {
+            gambar: 'shirt',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '100.000',
+            kota: 'Makassar'
+        },
+        {
+            gambar: 'clothes',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '200.000',
+            kota: 'Palembang'
+        },
+        {
+            gambar: 'snack',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '10.000',
+            kota: 'Surabaya'
+        },
+        {
+            gambar: 'anime',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '30.000',
+            kota: 'Jakarta'
+        }
     ]
 
     const fashion = [
-        { gambar: 'shirt' },
-        { gambar: 'clothes' },
-        { gambar: 'snack' },
-        { gambar: 'anime' }
+        { gambar: 'shirt', harga: '100.000', kota: 'Makassar' },
+        { gambar: 'clothes', harga: '200.000', kota: 'Palembang' },
+        { gambar: 'snack', harga: '10.000', kota: 'Surabaya' },
+        { gambar: 'anime', harga: '30.000', kota: 'Jakarta' }
     ]
 
+
     return (
-        <div className='bg-green-600 h-[5000px]'>
+        <div className='bg-green-600'>
             <Navbar />
             <div className="bg-white rounded-tl-lg rounded-tr-lg">
                 <div>
@@ -127,6 +161,9 @@ const Home = () => {
                 </div>
                 <div>
                     <Carousel values={carousel} />
+                </div>
+                <div>
+                    <Category values={''} />
                 </div>
                 <div>
                     <SubJudul title={'Produk Hari Ini'} />
@@ -153,6 +190,30 @@ const Home = () => {
                     <div>
                         <Card products={products} />
                     </div>
+                </div>
+                <div>
+                    <footer className='mt-5'>
+                        <div className="px-4 py-3 border-y-[1px] border-slate-200">
+                            <h3 className='text-sm font-bold'>Mau Cari Apa di Bintang Store?</h3>
+                            {filteringMenus.map((menu, i) => (
+                                <p className='inline-block text-xs text-slate-400 mr-1'> {menu.title} | </p>
+                            ))}
+                        </div>
+                        <div className="px-4 py-3 border-b-[1px] border-slate-200">
+                            <p className='inline-block text-xs text-slate-400 mr-1'>Bintang Store Care |</p>
+                            <p className='inline-block text-xs text-slate-400 mr-1'>Syarat & Ketentuan |</p>
+                            <p className='inline-block text-xs text-slate-400 mr-1'>Kebijakan Privasi |</p>
+                        </div>
+                        <div className="px-4 py-3 border-b-[1px] border-slate-200">
+                            <p className='inline-block text-xs text-slate-400 mr-1'>
+                                <AiOutlineCopyright className='inline-block mr-1' />
+                                <span>Bintang Store</span>
+                            </p>
+                            <p className='float-right inline-block text-xs text-slate-400'>
+                                By Muhammad Bintang
+                            </p>
+                        </div>
+                    </footer>
                 </div>
             </div>
         </div>
