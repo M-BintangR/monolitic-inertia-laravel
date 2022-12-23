@@ -5,8 +5,7 @@ import { Card, CardBox } from '@/Components/Card';
 import Carousel from '@/Components/Carousel';
 import { SubJudul } from '@/Components/Judul';
 import Category from '@/Components/Category';
-import { filter } from 'lodash';
-import { AiOutlineCopyright } from 'react-icons/ai';
+import Footer from '@/Components/Footer';
 
 const Home = () => {
     const filteringMenus = [
@@ -192,28 +191,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div>
-                    <footer className='mt-5'>
-                        <div className="px-4 py-3 border-y-[1px] border-slate-200">
-                            <h3 className='text-sm font-bold'>Mau Cari Apa di Bintang Store?</h3>
-                            {filteringMenus.map((menu, i) => (
-                                <p className='inline-block text-xs text-slate-400 mr-1'> {menu.title} | </p>
-                            ))}
-                        </div>
-                        <div className="px-4 py-3 border-b-[1px] border-slate-200">
-                            <p className='inline-block text-xs text-slate-400 mr-1'>Bintang Store Care |</p>
-                            <p className='inline-block text-xs text-slate-400 mr-1'>Syarat & Ketentuan |</p>
-                            <p className='inline-block text-xs text-slate-400 mr-1'>Kebijakan Privasi |</p>
-                        </div>
-                        <div className="px-4 py-3 border-b-[1px] border-slate-200">
-                            <p className='inline-block text-xs text-slate-400 mr-1'>
-                                <AiOutlineCopyright className='inline-block mr-1' />
-                                <span>Bintang Store</span>
-                            </p>
-                            <p className='float-right inline-block text-xs text-slate-400'>
-                                By Muhammad Bintang
-                            </p>
-                        </div>
-                    </footer>
+                    <Footer menus={filteringMenus} />
                 </div>
             </div>
         </div>
