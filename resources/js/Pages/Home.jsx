@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import Navbar from '@/Components/Navbar'
 import Menus from '@/Components/Menus';
 import { Card, CardBox } from '@/Components/Card';
@@ -6,6 +6,7 @@ import Carousel from '@/Components/Carousel';
 import { SubJudul } from '@/Components/Judul';
 import Category from '@/Components/Category';
 import Footer from '@/Components/Footer';
+import { DropdownNav } from '@/Components/Dropdown';
 
 const Home = () => {
     const filteringMenus = [
@@ -150,10 +151,10 @@ const Home = () => {
         { gambar: 'anime', harga: '30.000', kota: 'Jakarta' }
     ]
 
-
+    const [dropDown, setDropDown] = useState(false);
     return (
-        <div className='bg-green-600'>
-            <Navbar />
+        <div className='bg-green-600 md:bg-white h-[5000px]'>
+            <Navbar onOpen={() => setDropDown(true)} />
             <div className="bg-white rounded-tl-lg rounded-tr-lg">
                 <div>
                     <Menus filteringMenus={filteringMenus} />
@@ -191,10 +192,21 @@ const Home = () => {
                     </div>
                 </div>
                 <div>
+                    <SubJudul title={'Produk Lainnya'} />
+                    <div className='w-screen'>
+                        <Card products={products} wrap={true} />
+                    </div>
+                    <div className="flex justify-center mx-2">
+                        <button className='py-2 text-center rounded-md w-full text-mb font-bold border border-spacing-1 border-slate-300'>Lihat Selebihnya</button>
+                    </div>
+                </div>
+                <div>
                     <Footer menus={filteringMenus} />
                 </div>
             </div>
+            <DropdownNav isVisible={dropDown} onClose={() => setDropDown(false)} />
         </div>
+
     )
 }
 
