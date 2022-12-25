@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { AiOutlineMail, AiOutlineMenu, AiOutlineSearch, AiOutlineShoppingCart, AiOutlineStock } from 'react-icons/ai';
+import { Link } from '@inertiajs/inertia-react';
 
 const Navbar = ({ onOpen }) => {
     const [navScroll, setNavScroll] = useState(false);
 
-    window.addEventListener('scroll', () => {
+    const setFix = () => {
         const windowHeight = window.scrollY;
         if (windowHeight > 150) {
             setNavScroll(true);
         } else {
             setNavScroll(false);
         }
-    })
+    }
+
+    window.addEventListener('scroll', setFix);
 
     return (
-        <nav className={`duration-300 ${navScroll === true ? 'bg-white drop-shadow-md' : 'bg-green-600 md:bg-white'} sticky top-0 right-0 left-0 z-50`}>
+        <nav className={`duration-300 ${navScroll === true ? 'bg-white drop-shadow-md' : 'bg-green-600 md:bg-white'} md:drop-shadow-md sticky top-0 right-0 left-0 z-50 w-full`}>
             <div className="hidden md:flex bg-slate-200 justify-end gap-4 tracking-tight text-sm py-1.5 px-10">
-                <p>Tentang Bintang Store</p>
-                <p>Mitra Bintang Store</p>
-                <p>Mulai Berjualan</p>
-                <p>Promo</p>
+                <Link href="" className='md:hover:text-green-600'>Tentang Bintang Store</Link>
+                <Link href="" className='md:hover:text-green-600'>Mitra Bintang Store</Link>
+                <Link href="" className='md:hover:text-green-600'>Mulai Berjualan</Link>
+                <Link href="" className='md:hover:text-green-600'>Promo</Link>
             </div>
-            <div className="pt-3 pb-5 md:pb-2 px-4 flex gap-x-2 w-screen md:w-full">
+            <div className="pt-3 pb-5 md:pb-2 px-4 flex gap-x-2">
                 <div className="hidden md:block">
                     <h3 className='md:text-xl lg:text-3xl text-green-600 font-bold'>Bintang Store</h3>
                 </div>
@@ -40,11 +43,11 @@ const Navbar = ({ onOpen }) => {
                         </button>
                     </div>
                     <div className="hidden md:flex justify-start gap-4 tracking-tight text-md mt-2 text-slate-500">
-                        <p>Termurah</p>
-                        <p>Terlaris</p>
-                        <p>Fashion</p>
-                        <p>Makanan</p>
-                        <p>Ternding</p>
+                        <Link href="" className='md:hover:text-green-600'>Termurah</Link>
+                        <Link href="" className='md:hover:text-green-600'>Terlaris</Link>
+                        <Link href="" className='md:hover:text-green-600'>Fashion</Link>
+                        <Link href="" className='md:hover:text-green-600'>Makanan</Link>
+                        <Link href="" className='md:hover:text-green-600'>Ternding</Link>
                     </div>
                 </div>
                 <div className={`flex gap-x-2 ${navScroll === true ? 'text-black' : 'text-white '} md:text-slate-600 md:items-start mt-2`}>

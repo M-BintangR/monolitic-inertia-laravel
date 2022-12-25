@@ -65,6 +65,72 @@ const Home = () => {
             stock: '250',
         },
         {
+            gambar: 'celana',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '20.000',
+            diskon: {
+                persen: '10%',
+                harga: '30.000',
+            },
+            kota: 'Surabaya',
+            stock: '250',
+        },
+        {
+            gambar: 'celana',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '20.000',
+            diskon: {
+                persen: '10%',
+                harga: '30.000',
+            },
+            kota: 'Surabaya',
+            stock: '250',
+        },
+        {
+            gambar: 'celana',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '20.000',
+            diskon: {
+                persen: '10%',
+                harga: '30.000',
+            },
+            kota: 'Surabaya',
+            stock: '250',
+        },
+        {
+            gambar: 'celana',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '20.000',
+            diskon: {
+                persen: '10%',
+                harga: '30.000',
+            },
+            kota: 'Surabaya',
+            stock: '250',
+        },
+        {
+            gambar: 'celana',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '20.000',
+            diskon: {
+                persen: '10%',
+                harga: '30.000',
+            },
+            kota: 'Surabaya',
+            stock: '250',
+        },
+        {
+            gambar: 'celana',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '20.000',
+            diskon: {
+                persen: '10%',
+                harga: '30.000',
+            },
+            kota: 'Surabaya',
+            stock: '250',
+        },
+        {
             gambar: 'baju',
             desc: ' Lorem ipsum dolor sit amet...',
             harga: '100.000',
@@ -125,6 +191,30 @@ const Home = () => {
             kota: 'Makassar'
         },
         {
+            gambar: 'shirt',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '100.000',
+            kota: 'Makassar'
+        },
+        {
+            gambar: 'shirt',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '100.000',
+            kota: 'Makassar'
+        },
+        {
+            gambar: 'shirt',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '100.000',
+            kota: 'Makassar'
+        },
+        {
+            gambar: 'shirt',
+            desc: ' Lorem ipsum dolor sit amet...',
+            harga: '100.000',
+            kota: 'Makassar'
+        },
+        {
             gambar: 'clothes',
             desc: ' Lorem ipsum dolor sit amet...',
             harga: '200.000',
@@ -144,6 +234,21 @@ const Home = () => {
         }
     ]
 
+    const category = [
+        { title: 'Pakaian' },
+        { title: 'Makanan' },
+        { title: 'Kecantikan' },
+        { title: 'Aksesoris' },
+        { title: 'Anime' },
+        { title: 'Komputer' },
+        { title: 'Anime' },
+        { title: 'Komputer' },
+        { title: 'Anime' },
+        { title: 'Komputer' },
+        { title: 'Anime' },
+        { title: 'Komputer' },
+    ]
+
     const fashion = [
         { gambar: 'shirt', harga: '100.000', kota: 'Makassar' },
         { gambar: 'clothes', harga: '200.000', kota: 'Palembang' },
@@ -156,48 +261,52 @@ const Home = () => {
         <div className='bg-green-600 md:bg-white h-[5000px]'>
             <Navbar onOpen={() => setDropDown(true)} />
             <div className="bg-white rounded-tl-lg rounded-tr-lg">
-                <div>
-                    <Menus filteringMenus={filteringMenus} />
-                </div>
-                <div>
-                    <Carousel values={carousel} />
-                </div>
-                <div>
-                    <Category values={''} />
-                </div>
-                <div>
-                    <SubJudul title={'Produk Hari Ini'} />
-                    <div className="bg-green-600">
-                        <Card products={products} />
-                    </div>
-                </div>
-                <div>
-                    <SubJudul title={'Produk Terlaris'} />
-                    <CardBox values={terlaris} warna={'bg-blue-600'} />
-                </div>
-                <div >
-                    <SubJudul title={'Produk Termurah'} />
+                <div className="md:mx-20 lg:mx-28">
+
                     <div>
-                        <Card products={products} />
+                        <Menus filteringMenus={filteringMenus} />
                     </div>
-                </div>
-                <div>
-                    <SubJudul title={'Produk Fashion'} />
-                    <CardBox values={fashion} warna={'bg-rose-600'} />
-                </div>
-                <div>
-                    <SubJudul title={'Trending'} />
                     <div>
-                        <Card products={products} />
+                        <Carousel values={carousel} />
                     </div>
-                </div>
-                <div>
-                    <SubJudul title={'Produk Lainnya'} />
-                    <div className='w-screen'>
-                        <Card products={products} wrap={true} />
+                    <div className='relative'>
+                        <SubJudul title={'Kategori Pilihan'} />
+                        <Category values={category} />
                     </div>
-                    <div className="flex justify-center mx-2">
-                        <button className='py-2 text-center rounded-md w-full text-mb font-bold border border-spacing-1 border-slate-300'>Lihat Selebihnya</button>
+                    <div>
+                        <SubJudul title={'Produk Hari Ini'} />
+                        <div className="bg-green-600 md:bg-white">
+                            <Card products={products} />
+                        </div>
+                    </div>
+                    <div>
+                        <SubJudul title={'Produk Terlaris'} />
+                        <CardBox values={terlaris} warna={'bg-blue-600'} />
+                    </div>
+                    <div >
+                        <SubJudul title={'Produk Termurah'} />
+                        <div>
+                            <Card products={products} />
+                        </div>
+                    </div>
+                    <div>
+                        <SubJudul title={'Produk Fashion'} />
+                        <CardBox values={fashion} warna={'bg-rose-600'} />
+                    </div>
+                    <div>
+                        <SubJudul title={'Trending'} />
+                        <div>
+                            <Card products={products} />
+                        </div>
+                    </div>
+                    <div>
+                        <SubJudul title={'Produk Lainnya'} />
+                        <div className=''>
+                            <Card products={products} wrap={true} />
+                        </div>
+                        <div className="flex justify-center mx-2">
+                            <button className='py-2 text-center rounded-md w-full text-mb font-bold border border-spacing-1 border-slate-300'>Lihat Selebihnya</button>
+                        </div>
                     </div>
                 </div>
                 <div>

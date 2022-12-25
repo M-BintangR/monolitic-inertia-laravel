@@ -14,12 +14,12 @@ export const DropdownNav = ({ onClose, isVisible }) => {
                 <div className="flex flex-col px-3 overflow-y-auto vh-100">
                     <div className="mt-3 my-4">
                         <div className="grid grid-cols-2 gap-2">
-                            <button className='px-2 border border-green-600 rounded-md bg-green-600 text-white font-bold'>Masuk</button>
-                            <button className='px-2 border border-green-600 rounded-md text-green-600 font-bold'>Daftar</button>
+                            <button className='px-2 py-1 border border-green-600 rounded-md bg-green-600 text-white font-bold'>Masuk</button>
+                            <button className='px-2 py-1 border border-green-600 rounded-md text-green-600 font-bold'>Daftar</button>
                         </div>
                     </div>
                     <div className="mt-3 flex flex-col gap-y-6">
-                        <div className='border-b-2 border-slate-300 py-3'>
+                        <div className='mb-5'>
                             <h3 className='text-base font-bold'>Aktifitas Saya</h3>
                             <div className="text-sm tracking-tight">
                                 <p>Daftar Transaksi</p>
@@ -28,7 +28,7 @@ export const DropdownNav = ({ onClose, isVisible }) => {
                                 <p>Toko Favorit</p>
                             </div>
                         </div>
-                        <div className='border-b-2 border-slate-300 py-3'>
+                        <div className='mb-5'>
                             <h3 className='text-base font-bold'>Aktifitas Saya</h3>
                             <div className="text-sm tracking-tight">
                                 <p>Daftar Transaksi</p>
@@ -37,7 +37,7 @@ export const DropdownNav = ({ onClose, isVisible }) => {
                                 <p>Toko Favorit</p>
                             </div>
                         </div>
-                        <div className='border-b-2 border-slate-300 py-3'>
+                        <div className='mb-5'>
                             <h3 className='text-base font-bold'>Aktifitas Saya</h3>
                             <div className="text-sm tracking-tight">
                                 <p>Daftar Transaksi</p>
@@ -46,7 +46,7 @@ export const DropdownNav = ({ onClose, isVisible }) => {
                                 <p>Toko Favorit</p>
                             </div>
                         </div>
-                        <div className='border-b-2 border-slate-300 py-3'>
+                        <div className='mb-5'>
                             <h3 className='text-base font-bold'>Aktifitas Saya</h3>
                             <div className="text-sm tracking-tight">
                                 <p>Daftar Transaksi</p>
@@ -55,7 +55,7 @@ export const DropdownNav = ({ onClose, isVisible }) => {
                                 <p>Toko Favorit</p>
                             </div>
                         </div>
-                        <div className='border-b-2 border-slate-300 py-3'>
+                        <div className='mb-5'>
                             <h3 className='text-base font-bold'>Aktifitas Saya</h3>
                             <div className="text-sm tracking-tight">
                                 <p>Daftar Transaksi</p>
@@ -64,7 +64,7 @@ export const DropdownNav = ({ onClose, isVisible }) => {
                                 <p>Toko Favorit</p>
                             </div>
                         </div>
-                        <div className='border-b-2 border-slate-300 py-3'>
+                        <div className='mb-5'>
                             <h3 className='text-base font-bold'>Aktifitas Saya</h3>
                             <div className="text-sm tracking-tight">
                                 <p>Daftar Transaksi</p>

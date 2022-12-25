@@ -3,7 +3,7 @@ import Icon from './Icon'
 
 const Menus = ({ filteringMenus }) => {
     return (
-        <div className='py-1'>
+        <div className='py-1 md:hidden'>
             <h2 className='px-3 py-2 text-lg font-semibold'>Pilihan Menu</h2>
             <div className="mt-2 overflow-x-auto flex flex-row gap-2 my-1 scrollbar-hide">
                 {filteringMenus.map((value, i) => (
