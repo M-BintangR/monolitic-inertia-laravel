@@ -14,4 +14,5 @@ const Carousel = ({ values }) => {
     )
 }
 
+
 export default Carousel

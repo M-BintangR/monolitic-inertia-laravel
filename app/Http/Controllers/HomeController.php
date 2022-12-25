@@ -11,4 +11,9 @@ class HomeController extends Controller
     {
         return Inertia::render('Home');
     }
+
+    function  product($query)
+    {
+        return Inertia::render('Product');
+    }
 }

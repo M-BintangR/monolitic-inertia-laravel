@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { AiOutlineMail, AiOutlineMenu, AiOutlineSearch, AiOutlineShoppingCart, AiOutlineStock } from 'react-icons/ai';
+import { AiOutlineArrowLeft, AiOutlineMail, AiOutlineMenu, AiOutlineSearch, AiOutlineShoppingCart, AiOutlineStock } from 'react-icons/ai';
 import { Link } from '@inertiajs/inertia-react';
 
-const Navbar = ({ onOpen }) => {
+const Navbar = ({ onOpen, btnBack }) => {
     const [navScroll, setNavScroll] = useState(false);
 
     const setFix = () => {
@@ -31,6 +31,13 @@ const Navbar = ({ onOpen }) => {
                 <div className='hidden md:block mx-3'>
                     <button className='py-0.5 px-1 duration-300 text-md text-slate-500 hover:bg-slate-300 hover:text-green-600'>Kategori</button>
                 </div>
+                {btnBack ? (
+                    <div className={`md:hidden flex gap-x-2 ${navScroll === true ? 'text-black' : 'text-white '} md:text-slate-600 md:items-start mt-2`}>
+                        <Link href='/'>
+                            <AiOutlineArrowLeft className='text-xl' />
+                        </Link>
+                    </div>
+                ) : null}
                 <div className="relative flex-auto md:mx-3">
                     <div className='md:relative'>
                         <input

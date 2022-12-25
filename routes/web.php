@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/show/product/{query}', [HomeController::class, 'product'])->name('product');
 Route::get('/category/product/{slug}', [CategoryController::class, 'index'])->name('category.index');
 
 

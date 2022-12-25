@@ -1,17 +1,20 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { AiOutlineStock } from 'react-icons/ai';
 import { FaCity } from 'react-icons/fa';
 import { ButtonScroll } from './Button';
 
-export const Card = ({ products, wrap }) => {
+export const Card = ({ products, wrap, button }) => {
     const scrollCard = useRef();
+    const [btnScroll, setBtnScroll] = useState(false);
 
     const scrollToRight = () => {
-        scrollCard.current.scrollBy(500, 0);
+        scrollCard.current.scrollBy(600, 0);
+        setBtnScroll(true);
     }
 
     const scrollToLeft = () => {
-        scrollCard.current.scrollTo(0, 500);
+        scrollCard.current.scrollTo(0, 600);
+        setBtnScroll(false);
     }
 
     return (
@@ -46,12 +49,14 @@ export const Card = ({ products, wrap }) => {
                 ))
                 }
             </div >
-            <ButtonScroll
-                card={true}
-                scrollToLeft={scrollToLeft}
-                scrollToRight={scrollToRight}
-                isVisible={true}
-            />
+            {button ? (
+                <ButtonScroll
+                    card={true}
+                    scrollToLeft={scrollToLeft}
+                    scrollToRight={scrollToRight}
+                    isVisible={btnScroll}
+                />
+            ) : null}
         </div>
 
     )
