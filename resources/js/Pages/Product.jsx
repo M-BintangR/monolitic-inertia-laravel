@@ -13,9 +13,9 @@ import Footer from '@/Components/Footer'
 const Product = () => {
     const [dropDown, setDropDown] = useState(false);
     return (
-        <div>
+        <div className='bg-green-600 md:bg-white'>
             <Navbar onOpen={() => setDropDown(true)} btnBack={true} />
-            <div>
+            <div className='bg-white rounded-tl-2xl rounded-tr-2xl'>
                 <div>
                     <Menus filteringMenus={filteringMenus} />
                 </div>

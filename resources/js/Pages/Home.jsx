@@ -14,9 +14,9 @@ const Home = () => {
 
     const [dropDown, setDropDown] = useState(false);
     return (
-        <div className='bg-green-600 md:bg-white h-[5000px]'>
+        <div className='bg-green-600 md:bg-white'>
             <Navbar onOpen={() => setDropDown(true)} />
-            <div className="bg-white rounded-tl-lg rounded-tr-lg">
+            <div className="bg-white rounded-tl-2xl rounded-tr-2xl">
                 <div className="md:mx-20 lg:mx-28">
                     <div>
                         <Menus filteringMenus={filteringMenus} />
